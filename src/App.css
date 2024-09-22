@@ -156,8 +156,6 @@ h2 {
   );
 }
 
-
-
 .icons {
   display: flex;
   align-items: center;
@@ -184,21 +182,10 @@ h2 {
 }
 
 .add-icon {
-  font-size: 30px;
-  margin-bottom: -10px;
+  font-size: 20px;
+  margin-bottom: -5px;
   margin-top: -20px;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .tooltip {
   position: relative;
@@ -215,7 +202,7 @@ h2 {
   border-radius: 0.25em;
   white-space: nowrap;
   font-size: 16px;
-  
+
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
