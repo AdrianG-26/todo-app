@@ -21,23 +21,38 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     return <TodoForm edit={edit} onSubmit={submitUpdate} />;
   }
 
+  if (todos.length === 0) {
+    return <h2>No todos available. Add a todo to get started!</h2>;
+  }
+
   return todos.map((todo, index) => (
     <div
       className={todo.isComplete ? "todo-row complete" : "todo-row"}
       key={index}
     >
-      <div key={todo.id} onClick={() => completeTodo(todo.id)}>
+      <div className="complete2 tooltip" key={todo.id} onClick={() => completeTodo(todo.id)}>
         {todo.text}
+        <p class="tooltiptext">Complete</p>
       </div>
       <div className="icons">
-        <RiCloseCircleLine
-          onClick={() => removeTodo(todo.id)}
-          className="delete-icon"
-        />
-        <TiEdit
-          onClick={() => setEdit({ id: todo.id, value: todo.text })}
-          className="edit-icon"
-        />
+        {!todo.isComplete && (
+          <>
+            <div className="tooltip">
+            <RiCloseCircleLine
+              onClick={() => removeTodo(todo.id)}
+              className="delete-icon"
+            />
+            <p class="tooltiptext">Delete</p>
+            </div>
+            <div className="tooltip">
+            <TiEdit
+              onClick={() => setEdit({ id: todo.id, value: todo.text })}
+              className="edit-icon"
+            />
+            <p class="tooltiptext">Edit</p>
+            </div>
+          </>
+        )}
       </div>
     </div>
   ));

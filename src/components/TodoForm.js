@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { CiCirclePlus } from "react-icons/ci";
+
 
 function TodoForm(props) {
   const [input, setInput] = useState(props.edit ? props.edit.value : "");
@@ -36,7 +38,7 @@ function TodoForm(props) {
             className="todo-input edit"
           />
           <button onClick={handleSubmit} className="todo-button edit">
-            Update
+            Save
           </button>
         </>
       ) : (
@@ -50,7 +52,7 @@ function TodoForm(props) {
             ref={inputRef}
           />
           <button onClick={handleSubmit} className="todo-button">
-            Add todo
+            <CiCirclePlus className="add-icon"></CiCirclePlus>
           </button>
         </>
       )}

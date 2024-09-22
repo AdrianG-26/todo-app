@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,11 +9,7 @@
 }
 
 body {
-  background: linear-gradient(
-    90deg,
-    rgba(48, 16, 255, 1) 0%,
-    rgba(100, 115, 255, 1) 100%
-  );
+  background: linear-gradient(-45deg, rgb(53, 2, 149) 0%, rgb(121, 5, 69) 100%);
 }
 .todo-app {
   display: flex;
@@ -29,12 +27,24 @@ body {
 h1 {
   margin: 32px 0;
   color: #fff;
-  font-size: 24px;
+  font-size: 40px;
+  font-family: "Teko", sans-serif;
+}
+
+h2 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: lighter;
 }
 
 .complete {
   text-decoration: line-through;
   opacity: 0.4;
+}
+
+.complete2:hover {
+  cursor: pointer;
+  color: black;
 }
 
 .todo-form {
@@ -70,6 +80,14 @@ h1 {
   text-transform: capitalize;
 }
 
+.todo-button:hover {
+  background: linear-gradient(
+    -90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+}
+
 .todo-input.edit {
   border: 2px solid #149fff;
 }
@@ -81,6 +99,14 @@ h1 {
     rgba(17, 122, 255, 1) 100%
   );
   padding: 16px 22px;
+}
+
+.todo-button.edit:hover {
+  background: linear-gradient(
+    -90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
 }
 
 .todo-container {
@@ -130,6 +156,8 @@ h1 {
   );
 }
 
+
+
 .icons {
   display: flex;
   align-items: center;
@@ -142,6 +170,62 @@ h1 {
   color: #fff;
 }
 
+.delete-icon:hover {
+  margin-right: 5px;
+  color: #000000;
+}
+
 .edit-icon {
   color: #fff;
+}
+
+.edit-icon:hover {
+  color: #000000;
+}
+
+.add-icon {
+  font-size: 30px;
+  margin-bottom: -10px;
+  margin-top: -20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: default;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  padding: 0.25em 0.5em;
+  background: linear-gradient(-45deg, rgb(53, 2, 149) 0%, rgb(121, 5, 69) 100%);
+  color: #fff;
+  text-align: center;
+  border-radius: 0.25em;
+  white-space: nowrap;
+  font-size: 16px;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 100%;
+  transition-property: visibility;
+  transition-delay: 0s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  transition-delay: 0.3s;
 }
